@@ -18,7 +18,9 @@ void f_add(stack_t **head, unsigned int counter)
         }
         if (len < 2)
         {
-                exit(EXIT_FAILURE);
+                fprintf(stderr, "L%d: can't add, stack too short\n", counter);
+
+		exit(EXIT_FAILURE);
         }
         h = *head;
         aux = h->n + h->next->n;
